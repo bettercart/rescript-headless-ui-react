@@ -1,19 +1,19 @@
 g_pkg_flg = -bs-package-name @bettercart/re-headless-ui-react -bs-ns HeadlessUI
-src_root_dir = /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/@bettercart/re-headless-ui-react
-bsc = /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/bs-platform/darwin/bsc.exe
-bsdep = /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/bs-platform/darwin/bsb_helper.exe
-warnings =  -w a
+src_root_dir = /Users/danwetherald/Developer/OpenSource/@bettercart/re-headless-ui-react
+bsc = /Users/danwetherald/Developer/OpenSource/@bettercart/re-headless-ui-react/node_modules/bs-platform/darwin/bsc.exe
+bsdep = /Users/danwetherald/Developer/OpenSource/@bettercart/re-headless-ui-react/node_modules/bs-platform/darwin/bsb_helper.exe
+warnings =  -warn-error +101
 bsc_flags = 
 ppx_flags = 
 g_dpkg_incls = 
 g_ns = -bs-ns HeadlessUI
-g_lib_incls = -I . -I src -I /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/reason-react/lib/ocaml
+g_lib_incls = -I . -I src -I /Users/danwetherald/Developer/OpenSource/@bettercart/re-headless-ui-react/node_modules/reason-react/lib/ocaml
 rule build_ast_from_re
   command = $bsc  $warnings -bs-jsx 3 $bsc_flags -o $out -bs-syntax-only -bs-binary-ast $in
 
 build  src/Menu.resast : build_ast_from_re $src_root_dir/src/Menu.res
 rule mk_deps
-  command = $bsdep -hash f2d1a4ad7778ff69d2a146ddd9aef86e $g_ns $in
+  command = $bsdep -hash a30afad5f72b434365b2769558a878d8 $g_ns $in
   restat = 1
 
 build  src/Menu.d : mk_deps src/Menu.resast
@@ -23,6 +23,10 @@ rule ml_cmj_cmi
   restat = 1
 
 build  src/Menu-HeadlessUI.cmj |  src/Menu-HeadlessUI.cmi ../../src/Menu.bs.js : ml_cmj_cmi src/Menu.resast ||  src/Menu.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:src:.bs.js
+build  src/Listbox.resast : build_ast_from_re $src_root_dir/src/Listbox.res
+build  src/Listbox.d : mk_deps src/Listbox.resast
+build  src/Listbox-HeadlessUI.cmj |  src/Listbox-HeadlessUI.cmi ../../src/Listbox.bs.js : ml_cmj_cmi src/Listbox.resast ||  src/Listbox.d
   g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:src:.bs.js
 build  src/Transition.resast : build_ast_from_re $src_root_dir/src/Transition.res
 build  src/Transition.d : mk_deps src/Transition.resast
