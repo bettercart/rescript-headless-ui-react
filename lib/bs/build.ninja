@@ -1,0 +1,35 @@
+g_pkg_flg = -bs-package-name re-headlessui-react -bs-ns HeadlessUI
+src_root_dir = /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/re-headlessui-react
+bsc = /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/bs-platform/darwin/bsc.exe
+bsdep = /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/bs-platform/darwin/bsb_helper.exe
+warnings =  -w a
+bsc_flags = 
+ppx_flags = 
+g_dpkg_incls = 
+g_ns = -bs-ns HeadlessUI
+g_lib_incls = -I . -I src -I /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/reason-react/lib/ocaml
+rule build_ast_from_re
+  command = $bsc  $warnings -bs-jsx 3 $bsc_flags -o $out -bs-syntax-only -bs-binary-ast $in
+
+build  src/Menu.resast : build_ast_from_re $src_root_dir/src/Menu.res
+rule mk_deps
+  command = $bsdep -hash f2d1a4ad7778ff69d2a146ddd9aef86e $g_ns $in
+  restat = 1
+
+build  src/Menu.d : mk_deps src/Menu.resast
+rule ml_cmj_cmi
+  command = $bsc $g_pkg_flg $g_lib_incls $warnings $bsc_flags -o $out $in
+  dyndep = $in_e.d
+  restat = 1
+
+build  src/Menu-HeadlessUI.cmj |  src/Menu-HeadlessUI.cmi ../../src/Menu.bs.js : ml_cmj_cmi src/Menu.resast ||  src/Menu.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:src:.bs.js
+build  src/Transition.resast : build_ast_from_re $src_root_dir/src/Transition.res
+build  src/Transition.d : mk_deps src/Transition.resast
+build  src/Transition-HeadlessUI.cmj |  src/Transition-HeadlessUI.cmi ../../src/Transition.bs.js : ml_cmj_cmi src/Transition.resast ||  src/Transition.d
+  g_pkg_flg = $g_pkg_flg  -bs-package-output commonjs:src:.bs.js
+rule build_package
+  command = $bsc -w -49 -color always -no-alias-deps  $in
+  restat = 1
+
+build  HeadlessUI.cmi : build_package HeadlessUI.mlmap

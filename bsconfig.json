@@ -1,0 +1,21 @@
+{
+  "name": "@bettercart/re-headless-ui-react",
+  "namespace": "HeadlessUI",
+  "reason": {
+    "react-jsx": 3
+  },
+  "version": "0.0.1",
+  "sources": {
+    "dir": "src",
+    "subdirs": true
+  },
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": ["reason-react"],
+  "warnings": {
+    "error": "+101"
+  }
+}

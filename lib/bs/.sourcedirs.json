@@ -1,0 +1,1 @@
+{ "dirs" : [ "src" ] , "pkgs" : [ [ "bs-platform" , "/Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/bs-platform" ] , [ "reason-react" , "/Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/reason-react" ] ] , "generated" : [] }

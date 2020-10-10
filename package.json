@@ -1,0 +1,42 @@
+{
+  "name": "@bettercart/re-headless-ui-react",
+  "homepage": "https://www.getbettercart.com",
+  "version": "0.0.1",
+  "scripts": {
+    "copy-git-hooks": "if [ -e ./hooks ] && [ -e ./.git/hooks ]; then cp -v ./hooks/* ./.git/hooks; fi",
+    "prepare": "if [ -z \"$CI\" ]; then yarn copy-git-hooks; fi",
+    "re:clean": "bsb -clean-world",
+    "re:build": "bsb -make-world",
+    "re:watch": "bsb -make-world -w"
+  },
+  "keywords": [
+    "BuckleScript",
+    "Rescript",
+    "TailwindCSS",
+    "Headless UI",
+    "Tailwind"
+  ],
+  "peerDependencies": {
+    "bs-platform": "^8.3.0",
+    "reason-react": "^0.9.1",
+    "prettier": "^2.1.2",
+    "lint-staged": "^10.4.0"
+  },
+  "optionalDependencies": {},
+  "author": "Better Cart Inc",
+  "license": "MIT",
+  "devDependencies": {
+    "@headlessui/react": "^0.2.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "*.{md,scss,css,json}": [
+      "prettier --write"
+    ],
+    "*.{re,rei}": [
+      "bsrefmt --in-place"
+    ]
+  }
+}
