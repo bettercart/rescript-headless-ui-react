@@ -26,7 +26,7 @@ module Items = {
     ~as_: React.element=?,
     ~children: itemsChildrenRenderProps => React.element,
     ~className: string=?,
-    ~static: bool
+    ~static: bool=?
   ) => React.element = "Items"
 }
 
@@ -38,6 +38,6 @@ module Item = {
     ~as_: React.element=?,
     ~children: itemChildrenRenderProps => React.element,
     ~className: string=?,
-    ~disabled: bool
+    ~disabled: bool=?
   ) => React.element = "Item"
 }

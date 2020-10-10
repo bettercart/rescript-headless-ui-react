@@ -1,13 +1,13 @@
 g_pkg_flg = -bs-package-name @bettercart/re-headless-ui-react -bs-ns HeadlessUI
-src_root_dir = /Users/danwetherald/Developer/OpenSource/@bettercart/re-headless-ui-react
-bsc = /Users/danwetherald/Developer/OpenSource/@bettercart/re-headless-ui-react/node_modules/bs-platform/darwin/bsc.exe
-bsdep = /Users/danwetherald/Developer/OpenSource/@bettercart/re-headless-ui-react/node_modules/bs-platform/darwin/bsb_helper.exe
-warnings =  -warn-error +101
+src_root_dir = /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/@bettercart/re-headless-ui-react
+bsc = /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/bs-platform/darwin/bsc.exe
+bsdep = /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/bs-platform/darwin/bsb_helper.exe
+warnings =  -w a
 bsc_flags = 
 ppx_flags = 
 g_dpkg_incls = 
 g_ns = -bs-ns HeadlessUI
-g_lib_incls = -I . -I src -I /Users/danwetherald/Developer/OpenSource/@bettercart/re-headless-ui-react/node_modules/reason-react/lib/ocaml
+g_lib_incls = -I . -I src -I /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/reason-react/lib/ocaml
 rule build_ast_from_re
   command = $bsc  $warnings -bs-jsx 3 $bsc_flags -o $out -bs-syntax-only -bs-binary-ast $in
 
