@@ -1,8 +1,8 @@
 g_pkg_flg = -bs-package-name @bettercart/re-headless-ui-react -bs-ns HeadlessUI
 src_root_dir = /Users/danwetherald/Developer/OpenSource/@bettercart/re-headless-ui-react
-bsc = /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/bs-platform/darwin/bsc.exe
-bsdep = /Users/danwetherald/Developer/BetterCart/refactor/better-cart-app/node_modules/bs-platform/darwin/bsb_helper.exe
-warnings = 
+bsc = /Users/danwetherald/Developer/OpenSource/@bettercart/re-headless-ui-react/node_modules/bs-platform/darwin/bsc.exe
+bsdep = /Users/danwetherald/Developer/OpenSource/@bettercart/re-headless-ui-react/node_modules/bs-platform/darwin/bsb_helper.exe
+warnings =  -warn-error +101
 bsc_flags = 
 ppx_flags = 
 g_dpkg_incls = 
