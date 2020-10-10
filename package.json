@@ -16,17 +16,17 @@
     "Headless UI",
     "Tailwind"
   ],
-  "peerDependencies": {
-    "bs-platform": "^8.3.0",
-    "reason-react": "^0.9.1",
-    "prettier": "^2.1.2",
-    "lint-staged": "^10.4.0"
-  },
   "optionalDependencies": {},
   "author": "Better Cart Inc",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
+    "reason-react": "^0.9.1",
     "@headlessui/react": "^0.2.0"
+  },
+  "devDependencies": {
+    "bs-platform": "^8.3.0",
+    "prettier": "^2.1.2",
+    "lint-staged": "^10.4.0"
   },
   "lint-staged": {
     "*.js": [
