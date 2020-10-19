@@ -1,24 +1,24 @@
-type menuChildrenRenderProps = {open_: bool}
+type menuChildrenRenderProps = {@bs.as("open") open_: bool}
 
 @bs.module("@headlessui/react") @react.component
 external make: (
   ~as_: React.element=?,
   ~children: menuChildrenRenderProps => React.element,
-  ~className: string=?
+  ~className: string=?,
 ) => React.element = "Menu"
 
-type buttonChildrenRenderProps = {open_: bool}
+type buttonChildrenRenderProps = {@bs.as("open") open_: bool}
 
 module Button = {
   @bs.module("@headlessui/react") @bs.scope("Menu") @react.component
   external make: (
     ~as_: React.element=?,
     ~children: buttonChildrenRenderProps => React.element,
-    ~className: string=?
+    ~className: string=?,
   ) => React.element = "Button"
 }
 
-type itemsChildrenRenderProps = {open_: bool}
+type itemsChildrenRenderProps = {@bs.as("open") open_: bool}
 
 module Items = {
   @bs.module("@headlessui/react") @bs.scope("Menu") @react.component
@@ -26,7 +26,7 @@ module Items = {
     ~as_: React.element=?,
     ~children: itemsChildrenRenderProps => React.element,
     ~className: string=?,
-    ~static: bool=?
+    ~static: bool=?,
   ) => React.element = "Items"
 }
 
@@ -38,6 +38,6 @@ module Item = {
     ~as_: React.element=?,
     ~children: itemChildrenRenderProps => React.element,
     ~className: string=?,
-    ~disabled: bool=?
+    ~disabled: bool=?,
   ) => React.element = "Item"
 }
