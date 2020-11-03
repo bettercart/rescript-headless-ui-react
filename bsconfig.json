@@ -1,5 +1,5 @@
 {
-  "name": "@bettercart/re-headless-ui-react",
+  "name": "@bettercart/rescript-headless-ui-react",
   "namespace": "HeadlessUI",
   "reason": {
     "react-jsx": 3

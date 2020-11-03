@@ -1,5 +1,6 @@
 {
-  "name": "@bettercart/re-headless-ui-react",
+  "name": "@bettercart/rescript-headless-ui-react",
+  "repository": "https://github.com/bettercart/rescript-headless-ui-react.git",
   "homepage": "https://www.getbettercart.com",
   "version": "0.0.1",
   "scripts": {
@@ -20,10 +21,10 @@
   "author": "Better Cart Inc",
   "license": "MIT",
   "dependencies": {
-    "reason-react": "^0.9.1",
     "@headlessui/react": "^0.2.0"
   },
   "peerDependencies": {
+    "reason-react": "^0.9.1",
     "bs-platform": "^8.3.1",
     "prettier": "^2.1.2",
     "lint-staged": "^10.4.0"
