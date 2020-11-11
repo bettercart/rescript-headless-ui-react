@@ -2,7 +2,7 @@
   "name": "@bettercart/rescript-headless-ui-react",
   "repository": "https://github.com/bettercart/rescript-headless-ui-react.git",
   "homepage": "https://www.getbettercart.com",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "copy-git-hooks": "if [ -e ./hooks ] && [ -e ./.git/hooks ]; then cp -v ./hooks/* ./.git/hooks; fi",
     "prepare": "if [ -z \"$CI\" ]; then yarn copy-git-hooks; fi",
