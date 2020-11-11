@@ -11,8 +11,7 @@
     "re:watch": "bsb -make-world -w"
   },
   "keywords": [
-    "BuckleScript",
-    "Rescript",
+    "rescript",
     "TailwindCSS",
     "Headless UI",
     "Tailwind"
