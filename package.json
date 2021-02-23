@@ -2,7 +2,7 @@
   "name": "@bettercart/rescript-headless-ui-react",
   "repository": "https://github.com/bettercart/rescript-headless-ui-react.git",
   "homepage": "https://www.getbettercart.com",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
     "re:clean": "bsb -clean-world",
     "re:build": "bsb -make-world",
