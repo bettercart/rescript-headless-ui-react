@@ -4,8 +4,6 @@
   "homepage": "https://www.getbettercart.com",
   "version": "0.0.2",
   "scripts": {
-    "copy-git-hooks": "if [ -e ./hooks ] && [ -e ./.git/hooks ]; then cp -v ./hooks/* ./.git/hooks; fi",
-    "prepare": "if [ -z \"$CI\" ]; then yarn copy-git-hooks; fi",
     "re:clean": "bsb -clean-world",
     "re:build": "bsb -make-world",
     "re:watch": "bsb -make-world -w"
@@ -23,20 +21,13 @@
     "@headlessui/react": "^0.2.0"
   },
   "peerDependencies": {
-    "reason-react": "^0.9.1",
-    "bs-platform": "^8.3.1",
-    "prettier": "^2.1.2",
-    "lint-staged": "^10.4.0"
+    "@rescript/react": "^0.10.1",
+    "bs-platform": "^9.0.1",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2"
   },
-  "lint-staged": {
-    "*.js": [
-      "prettier --write"
-    ],
-    "*.{md,scss,css,json}": [
-      "prettier --write"
-    ],
-    "*.{re,rei}": [
-      "bsrefmt --in-place"
-    ]
+  "devDependencies": {
+    "@rescript/react": "^0.10.1",
+    "bs-platform": "^9.0.1"
   }
 }
