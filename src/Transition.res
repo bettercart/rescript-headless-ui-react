@@ -1,8 +1,9 @@
-@bs.module("@headlessui/react") @react.component
+@module("@headlessui/react") @react.component
 external make: (
   ~show: bool,
   ~appear: bool=?,
   ~enter: string=?,
+  ~as_: React.element=?,
   ~enterFrom: string=?,
   ~enterTo: string=?,
   ~leave: string=?,

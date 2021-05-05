@@ -1,16 +1,16 @@
-type menuChildrenRenderProps = {@bs.as("open") open_: bool}
+type menuChildrenRenderProps = {@as("open") open_: bool}
 
-@bs.module("@headlessui/react") @react.component
+@module("@headlessui/react") @react.component
 external make: (
   ~as_: React.element=?,
   ~children: menuChildrenRenderProps => React.element,
   ~className: string=?,
 ) => React.element = "Menu"
 
-type buttonChildrenRenderProps = {@bs.as("open") open_: bool}
+type buttonChildrenRenderProps = {@as("open") open_: bool}
 
 module Button = {
-  @bs.module("@headlessui/react") @bs.scope("Menu") @react.component
+  @module("@headlessui/react") @scope("Menu") @react.component
   external make: (
     ~as_: React.element=?,
     ~children: buttonChildrenRenderProps => React.element,
@@ -18,10 +18,10 @@ module Button = {
   ) => React.element = "Button"
 }
 
-type itemsChildrenRenderProps = {@bs.as("open") open_: bool}
+type itemsChildrenRenderProps = {@as("open") open_: bool}
 
 module Items = {
-  @bs.module("@headlessui/react") @bs.scope("Menu") @react.component
+  @module("@headlessui/react") @scope("Menu") @react.component
   external make: (
     ~as_: React.element=?,
     ~children: itemsChildrenRenderProps => React.element,
@@ -33,7 +33,7 @@ module Items = {
 type itemChildrenRenderProps = {active: bool, disabled: bool}
 
 module Item = {
-  @bs.module("@headlessui/react") @bs.scope("Menu") @react.component
+  @module("@headlessui/react") @scope("Menu") @react.component
   external make: (
     ~as_: React.element=?,
     ~children: itemChildrenRenderProps => React.element,
