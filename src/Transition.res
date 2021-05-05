@@ -3,7 +3,7 @@ external make: (
   ~show: bool,
   ~appear: bool=?,
   ~enter: string=?,
-  ~as_: React.element=?,
+  ~as_: string=?,
   ~enterFrom: string=?,
   ~enterTo: string=?,
   ~leave: string=?,
