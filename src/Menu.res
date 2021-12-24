@@ -1,43 +1,41 @@
-type menuChildrenRenderProps = {@as("open") open_: bool}
-
-@module("@headlessui/react") @react.component
-external make: (
-  ~as_: string=?,
-  ~children: menuChildrenRenderProps => React.element,
-  ~className: string=?,
-) => React.element = "Menu"
-
-type buttonChildrenRenderProps = {@as("open") open_: bool}
-
-module Button = {
-  @module("@headlessui/react") @scope("Menu") @react.component
+type renderProps = {@as("open") _open: bool}
+  @module("@headlessui/react") @react.component
   external make: (
-    ~as_: string=?,
-    ~children: buttonChildrenRenderProps => React.element,
+    ~_as: 'asType=?,
     ~className: string=?,
-  ) => React.element = "Button"
-}
+    ~children: renderProps => React.element,
+  ) => React.element = "Menu"
 
-type itemsChildrenRenderProps = {@as("open") open_: bool}
+  module Button = {
+    type renderProps = {@as("open") _open: bool}
+    @module("@headlessui/react") @react.component @scope("Menu")
+    external make: (
+      ~_as: 'asType=?,
+      ~className: string=?,
+      ~children: renderProps => React.element,
+    ) => React.element = "Button"
+  }
 
-module Items = {
-  @module("@headlessui/react") @scope("Menu") @react.component
-  external make: (
-    ~as_: string=?,
-    ~children: itemsChildrenRenderProps => React.element,
-    ~className: string=?,
-    ~static: bool=?,
-  ) => React.element = "Items"
-}
+  module Items = {
+    type renderProps = {@as("open") _open: bool}
+    @module("@headlessui/react") @react.component @scope("Menu")
+    external make: (
+      ~_as: 'asType=?,
+      ~static: bool=?,
+      ~unmount: bool=?,
+      ~className: string=?,
+      ~children: renderProps => React.element,
+    ) => React.element = "Items"
+  }
 
-type itemChildrenRenderProps = {active: bool, disabled: bool}
-
-module Item = {
-  @module("@headlessui/react") @scope("Menu") @react.component
-  external make: (
-    ~as_: string=?,
-    ~children: itemChildrenRenderProps => React.element,
-    ~className: string=?,
-    ~disabled: bool=?,
-  ) => React.element = "Item"
-}
+  module Item = {
+    type renderProps = {@as("open") _open: bool, active: bool}
+    @module("@headlessui/react") @react.component @scope("Menu")
+    external make: (
+      ~_as: 'asType=?,
+      ~disabled: bool=?,
+      ~active: bool=?,
+      ~className: string=?,
+      ~children: renderProps => React.element,
+    ) => React.element = "Item"
+  }

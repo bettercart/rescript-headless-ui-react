@@ -1,52 +1,55 @@
-type listChildrenRenderProps = {open_: bool}
-
-@module("@headlessui/react") @react.component
-external make: (
-  ~as_: React.element=?,
-  ~value: 't,
-  ~onChange: 't => unit,
-  ~children: listChildrenRenderProps => React.element,
-  ~className: string=?,
-) => React.element = "Listbox"
-
-type buttonChildrenRenderProps = {open_: bool}
-
-module Button = {
-  @module("@headlessui/react") @scope("Listbox") @react.component
+type renderProps = {@as("open") _open: bool, disabled: bool}
+  @module("@headlessui/react") @react.component
   external make: (
-    ~as_: string=?,
-    ~children: buttonChildrenRenderProps => React.element,
-    ~className: string=?,
-  ) => React.element = "Button"
-}
-
-module Label = {
-  @module("@headlessui/react") @scope("Listbox") @react.component
-  external make: (~as_: string=?, ~children: 'children=?, ~className: string=?) => React.element =
-    "Label"
-}
-
-type optionsChildrenRenderProps = {open_: bool}
-
-module Options = {
-  @module("@headlessui/react") @scope("Listbox") @react.component
-  external make: (
-    ~as_: string=?,
-    ~children: optionsChildrenRenderProps => React.element,
-    ~className: string=?,
-    ~static: bool=?,
-  ) => React.element = "Options"
-}
-
-type optionChildrenRenderProps = {active: bool, selected: bool, disabled: bool}
-
-module Option = {
-  @module("@headlessui/react") @scope("Listbox") @react.component
-  external make: (
-    ~as_: string=?,
-    ~value: 't,
-    ~children: optionChildrenRenderProps => React.element,
-    ~className: string=?,
+    ~_as: 'asType=?,
     ~disabled: bool=?,
-  ) => React.element = "Option"
-}
+    ~value: 'value=?,
+    ~onChange: 'value => unit=?,
+    ~horizontal: bool=?,
+    ~className: string=?,
+    ~children: renderProps => React.element,
+  ) => React.element = "ListBox"
+
+  module Button = {
+    type renderProps = {@as("open") _open: bool, disabled: bool}
+    @module("@headlessui/react") @react.component @scope("ListBox")
+    external make: (
+      ~_as: 'asType=?,
+      ~className: string=?,
+      ~children: renderProps => React.element,
+    ) => React.element = "Button"
+  }
+
+  module Label = {
+    type renderProps = {@as("open") _open: bool, disabled: bool}
+    @module("@headlessui/react") @react.component @scope("ListBox")
+    external make: (
+      ~_as: 'asType=?,
+      ~className: string=?,
+      ~children: renderProps => React.element,
+    ) => React.element = "Label"
+  }
+
+  module Options = {
+    type renderProps = {@as("open") _open: bool}
+    @module("@headlessui/react") @react.component @scope("ListBox")
+    external make: (
+      ~_as: 'asType=?,
+      ~static: bool=?,
+      ~unmount: bool=?,
+      ~className: string=?,
+      ~children: renderProps => React.element,
+    ) => React.element = "Options"
+  }
+
+  module Option = {
+    type renderProps = {active: bool, selected: bool, disabled: bool}
+    @module("@headlessui/react") @react.component @scope("ListBox")
+    external make: (
+      ~_as: 'asType=?,
+      ~value: 'value=?,
+      ~disabled: bool=?,
+      ~className: string=?,
+      ~children: renderProps => React.element,
+    ) => React.element = "Option"
+  }
