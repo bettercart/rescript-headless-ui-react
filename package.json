@@ -2,7 +2,7 @@
   "name": "@bettercart/rescript-headless-ui-react",
   "repository": "https://github.com/bettercart/rescript-headless-ui-react.git",
   "homepage": "https://www.getbettercart.com",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "keywords": [
     "rescript",
     "TailwindCSS",
