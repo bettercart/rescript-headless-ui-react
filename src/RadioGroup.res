@@ -17,7 +17,7 @@
       ~disabled: bool=?,
       ~className: string=?,
       ~children: renderProps => React.element,
-    ) => React.element = "Button"
+    ) => React.element = "Option"
   }
 
   module Label = {
