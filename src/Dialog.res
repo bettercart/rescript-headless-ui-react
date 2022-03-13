@@ -1,7 +1,7 @@
 type renderProps = {@as("open") _open: bool}
 @module("@headlessui/react") @react.component
 external make: (
-  ~open_: bool=?,
+  @as("open") ~_open: bool=?,
   ~onClose: unit => unit=?,
   ~initialFocus: React.ref<React.element>=?,
   ~_as: 'asType=?,
